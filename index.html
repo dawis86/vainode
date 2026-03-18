@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaiņodes iedzīvotāju padome</title>
+    
+    <!-- CSS Moduļi -->
+    <link rel="stylesheet" href="css/variables.css"> <!-- Krāsas un izmēri -->
+    <link rel="stylesheet" href="css/global.css">    <!-- Lapas karkass -->
+    <link rel="stylesheet" href="css/components.css"> <!-- Pogas, ievades lauki -->
+    <link rel="stylesheet" href="css/sections.css">   <!-- Konkrētu sadaļu stili -->
+
+    <!-- Moderns, lasāms fonts visiem vecumiem -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Ikonas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Fona gradients, kas elpo -->
+    <div class="ambient-bg"></div>
+
+    <div class="app-container">
+        
+        <!-- 1. HEADER (Fiksēts augšā) -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">VP</span>
+                <div class="logo-text">
+                    <h1>Vaiņodes padome</h1>
+                    <p>Tiešsaistē</p>
+                </div>
+            </div>
+            <div class="status-badge pulse">
+                <span class="dot"></span> 2026
+            </div>
+        </header>
+
+        <!-- 2. MAIN CONTENT (Mainās saturs, nevis lapa skrollējas) -->
+        <main class="viewport">
+            
+            <!-- SKATS 1: SĀKUMS (Dashboard) -->
+            <div id="view-home" class="view active-view">
+                <!-- Fona attēls (Vizuālais efekts) -->
+                <div class="view-bg home-bg"></div>
+
+                <div class="hero-card reveal active">
+                    <div class="hero-label">Sēde Nr. 2 (26. februāris)</div>
+                    <h2 id="hero-title">Iedzīvotāju jautājumu risināšana</h2>
+                    <p id="hero-desc">Izskatīti 14 ierosinājumi par apgaismojumu un vidi. Nolemts vērsties pie atbildīgajām iestādēm.</p>
+                    <button class="btn-primary" id="btn-to-news">Lasīt protokolu <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <div class="info-grid reveal active" style="transition-delay: 0.1s">
+                    <div class="info-card">
+                        <h3>14</h3>
+                        <span>Dalībnieki sēdē</span>
+                    </div>
+                    <div class="info-card">
+                        <h3>2</h3>
+                        <span>Notikušas sēdes</span>
+                    </div>
+                </div>
+
+                <div class="legal-footer">
+                    <p>Izstrādāts Vaiņodes iedzīvotāju padomes vajadzībām &copy; 2026</p>
+                </div>
+            </div>
+
+            <!-- SKATS 2: JAUNUMI (Feed) -->
+            <div id="view-news" class="view">
+                <div class="section-header">
+                    <h3 style="font-size: 1.5rem; font-weight: 800;">Hronika un notikumi</h3>
+                </div>
+                <div id="feed-container" class="scrollable-content">
+                    <!-- JS ievietos saturu -->
+                </div>
+                <div class="legal-footer">
+                    <p>Informācija tiek regulāri atjaunota</p>
+                </div>
+            </div>
+
+            <!-- SKATS 3: KONTAKTI -->
+            <div id="view-contact" class="view">
+                <div class="contact-header reveal active">
+                    <h2>Saziņa un komanda</h2>
+                    <p>Jūsu balss Vaiņodes attīstībai</p>
+                </div>
+
+                <!-- Ātrās darbības (Zvanīt / Rakstīt) -->
+                <div class="action-grid reveal active" style="transition-delay: 0.1s">
+                    <a href="tel:+37126046101" class="action-btn call">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <span>Zvanīt priekšsēdētājai</span>
+                            <strong>+371 26046101</strong>
+                        </div>
+                    </a>
+                    <a href="mailto:vainodesip@inbox.lv" class="action-btn email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <span>Rakstīt e-pastu</span>
+                            <strong>vainodesip@inbox.lv</strong>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Komandas režģis -->
+                <div class="team-section reveal active" style="transition-delay: 0.2s">
+                    <div class="team-visual">
+                        <img src="jpg/padome.jpg" alt="Padomes kopbilde">
+                        <div class="visual-badge"><i class="fa-solid fa-users"></i> 2026. gada sasaukums</div>
+                    </div>
+                    <h3>Padomes sastāvs</h3>
+                    <div class="team-grid">
+                        <div class="member-card highlight" data-name="Gunita Riežniece" data-role="Priekšsēdētāja" data-email="gunita.r@vainode.lv" data-phone="+371 26046101">
+                            <div class="avatar">GR</div>
+                            <div class="details">
+                                <h4>Gunita Riežniece</h4>
+                                <span>Priekšsēdētāja</span>
+                            </div>
+                        </div>
+                        <div class="member-card" data-name="Larisa Lagzdiņa" data-role="Priekšsēdētājas vietniece" data-email="larisa.l@vainode.lv">
+                            <div class="avatar">LL</div>
+                            <div class="details">
+                                <h4>Larisa Lagzdiņa</h4>
+                                <span>Vietniece</span>
+                            </div>
+                        </div>
+                        <div class="member-card" data-name="Mārtiņš Fricsons" data-role="Protokolists" data-email="martins.f@vainode.lv">
+                            <div class="avatar">MF</div>
+                            <div class="details">
+                                <h4>Mārtiņš Fricsons</h4>
+                                <span>Protokolists</span>
+                            </div>
+                        </div>
+                        <div class="member-card" data-name="Aigars Harmsons" data-role="Padomes loceklis" data-email="aigars.h@vainode.lv">
+                            <div class="avatar">AH</div>
+                            <div class="details">
+                                <h4>Aigars Harmsons</h4>
+                                <span>Padomes loceklis</span>
+                            </div>
+                        </div>
+                        <div class="member-card" data-name="Iveta Mame" data-role="Padomes locekle" data-email="iveta.m@vainode.lv">
+                            <div class="avatar">IM</div>
+                            <div class="details">
+                                <h4>Iveta Mame</h4>
+                                <span>Padomes locekle</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forma -->
+                <div class="form-container reveal active" style="transition-delay: 0.3s">
+                    <h3>Iesniegt jautājumu</h3>
+                    <form id="contact-form">
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Jūsu vārds</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="msg" rows="3" required placeholder=" "></textarea>
+                            <label for="msg">Jūsu ziņa / ierosinājums</label>
+                        </div>
+                        <button type="submit" class="btn-primary full-width">
+                            Nosūtīt padomei <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="legal-footer">
+                    <p>Jūsu dati tiek apstrādāti saskaņā ar VDAR</p>
+                </div>
+            </div>
+
+            <!-- SKATS 4: DOKUMENTI -->
+            <div id="view-docs" class="view">
+                <div class="section-header">
+                    <h3 style="font-size: 1.5rem; font-weight: 800;">Oficiālie dokumenti</h3>
+                </div>
+                <div id="docs-container" class="scrollable-content">
+                    <!-- JS ievietos saturu -->
+                </div>
+                <div class="legal-footer">
+                    <p>Dokumenti sagatavoti PDF formātā</p>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- 3. NAVIGATION DOCK (Peldošā izvēlne apakšā) -->
+        <nav class="bottom-dock">
+            <button class="nav-btn active" data-target="home">
+                <i class="fa-solid fa-house"></i>
+            </button>
+            <button class="nav-btn" data-target="news">
+                <i class="fa-solid fa-layer-group"></i>
+            </button>
+            <button class="nav-btn" data-target="contact">
+                <i class="fa-solid fa-comment-dots"></i>
+            </button>
+            <button class="nav-btn" data-target="docs">
+                <i class="fa-solid fa-folder-open"></i>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- MODAL (Slēpts logs, kas parādās uzklikšķinot) -->
+    <div id="member-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-img-placeholder">
+                <i class="fa-solid fa-user"></i>
+                <span>Šeit var būt attēls</span>
+            </div>
+            <h3 id="modal-name">Vārds Uzvārds</h3>
+            <p id="modal-role" class="modal-role">Amats</p>
+            <div class="modal-info">
+                <p><i class="fa-solid fa-envelope"></i> <span id="modal-email">-</span></p>
+                <p id="modal-phone-row" style="display:none"><i class="fa-solid fa-phone"></i> <span id="modal-phone">-</span></p>
+            </div>
+            <button class="btn-primary full-width" onclick="document.getElementById('member-modal').classList.remove('active')">Aizvērt</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script> <!-- Galvenais JS fails -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* --- BUTTONS --- */
+.btn-primary {
+    background: white; color: var(--accent-primary); border: none;
+    padding: 16px 28px; border-radius: 50px;
+    font-weight: 600; cursor: pointer; transition: all 0.3s var(--ease-elastic);
+    display: inline-flex; align-items: center; gap: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.btn-primary:hover { transform: scale(1.05); color: var(--accent-highlight); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.btn-primary:active { transform: scale(0.95); }
+
+.full-width { width: 100%; justify-content: center; }
+
+/* --- NAV DOCK --- */
+.bottom-dock {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px);
+    padding: 10px 20px; border-radius: 100px;
+    display: flex; gap: 20px; z-index: 200;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-btn {
+    background: transparent; border: none; color: rgba(255,255,255,0.4);
+    width: 50px; height: 50px; border-radius: 50%; font-size: 20px;
+    cursor: pointer; transition: all 0.3s var(--ease-elastic);
+    display: flex; align-items: center; justify-content: center;
+}
+
+.nav-btn:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-btn.active { background: white; color: var(--accent-primary); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(255,255,255,0.3); }
+
+/* --- INPUTS --- */
+.input-group { position: relative; margin-bottom: 20px; }
+
+.input-group input, .input-group textarea {
+    width: 100%; padding: 18px; border: 2px solid #E2E8F0;
+    border-radius: 16px; background: #F8FAFC; color: var(--text-main);
+    transition: 0.3s; font-size: 1rem; resize: none;
+}
+
+.input-group label {
+    position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+    color: #94A3B8; pointer-events: none; transition: 0.3s; padding: 0 5px;
+}
+.input-group textarea + label { top: 25px; }
+
+.input-group input:focus, .input-group input:not(:placeholder-shown),
+.input-group textarea:focus, .input-group textarea:not(:placeholder-shown) {
+    border-color: var(--accent-highlight); background: white; outline: none;
+}
+
+.input-group input:focus + label, .input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label, .input-group textarea:not(:placeholder-shown) + label {
+    top: 0; font-size: 0.75rem; color: var(--accent-highlight); background: white;
+}
+
+/* --- ANIMATIONS --- */
+.reveal { opacity: 0; transform: translateY(40px); transition: 0.8s var(--ease-smooth); }
+.reveal.active { opacity: 1; transform: translateY(0); }

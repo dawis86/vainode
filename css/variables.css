@@ -1,0 +1,29 @@
+:root {
+    /* --- KRĀSU PALETE (Maini šeit, mainīsies visur) --- */
+    --bg-color: #F0F2F5;       /* Galvenais fona tonis */
+    --text-main: #111827;      /* Galvenā teksta krāsa (gandrīz melna) */
+    --text-sec: #64748B;       /* Sekundārā teksta krāsa (pelēka) */
+    
+    --accent-primary: #0F172A;   /* Galvenā akcenta krāsa (logo, navigācija) - Pusnakts zila */
+    --accent-highlight: #2563EB; /* Izcelšanas krāsa (pogas, saites) - Spilgti zila */
+    --accent-success: #10B981;   /* Veiksmes krāsa (kad forma nosūtīta) - Zaļa */
+    
+    /* --- STIKLA EFEKTI (Glassmorphism) --- */
+    --glass-bg: rgba(255, 255, 255, 0.65); /* Caurspīdīgs balts */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.3); /* Smalka apmale */
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07); /* Ēna */
+    --blur: blur(20px); /* Izplūdums */
+    
+    /* --- IZMĒRI (Pielāgojas ekrānam automātiski) --- */
+    --radius-lg: clamp(24px, 3vh, 32px);
+    --radius-md: clamp(16px, 2vh, 20px);
+    --radius-sm: clamp(8px, 1vh, 12px);
+    
+    --spacing-xs: clamp(6px, 1vh, 10px);   /* Ļoti maza atstarpe */
+    --spacing-sm: clamp(12px, 1.5vh, 20px); /* Maza atstarpe */
+    --spacing-md: clamp(24px, 3vh, 40px);   /* Vidēja atstarpe */
+
+    /* --- ANIMĀCIJAS (Apple stila "bouncy" efekts) --- */
+    --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}

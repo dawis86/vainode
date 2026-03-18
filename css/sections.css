@@ -1,0 +1,249 @@
+/* --- DATORU IZKĀRTOJUMS (Grid) --- */
+@media (min-width: 1024px) {
+    #view-home { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--spacing-md); align-content: start; }
+    
+    /* Kontaktu skats: Kreisajā pusē Pogas/Forma, Labajā pusē Komanda */
+    #view-contact { display: grid; grid-template-columns: 1fr 2fr; grid-template-rows: auto auto 1fr; gap: var(--spacing-md); align-content: start; }
+    
+    .contact-header { grid-column: 1 / -1; text-align: center; }
+    .action-grid { grid-column: 1 / 2; grid-row: 2; margin-bottom: 0; }
+    .form-container { grid-column: 1 / 2; grid-row: 3; margin-top: 0; }
+    .team-section { grid-column: 2 / 3; grid-row: 2 / 4; }
+    .legal-footer { grid-column: 1 / -1; margin-top: 20px; }
+    
+    /* Home skatā Hero karte aizņem 2 kolonnas, Info 1 kolonnu */
+    .hero-card { grid-column: 1 / 3; }
+    .info-grid { display: flex; flex-direction: column; margin-top: 0; grid-column: 3 / 4; }
+    
+    /* Jaunumi un Dokumenti */
+    .tweet-card { max-width: none; margin: 0; }
+}
+
+/* --- FONA ATTĒLI (Vainode.jpg u.c.) --- */
+.view-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* Ievērojami redzamāks */
+    pointer-events: none;
+    /* mix-blend-mode: multiply; - Noņemam, lai krāsas būtu dabiskākas */
+}
+
+.home-bg { background-image: url('../jpg/vainode.jpg'); }
+
+/* --- SĀKUMA SKATS (Home) --- */
+.hero-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    color: white; padding: var(--spacing-md); border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-sm); position: relative; overflow: hidden;
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25);
+}
+.hero-card::after {
+    content: ''; position: absolute; top: 0; right: 0; width: 200px; height: 200px;
+    background: rgba(255,255,255,0.1); border-radius: 50%; transform: translate(30%, -30%);
+}
+.hero-label { font-size: 0.8rem; opacity: 0.8; letter-spacing: 0.5px; font-weight: 700; margin-bottom: 10px; }
+.hero-card h2 { font-size: 2.2rem; line-height: 1.1; margin-bottom: 15px; font-weight: 800; }
+.hero-card p { opacity: 0.9; margin-bottom: 25px; line-height: 1.6; }
+
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+.info-card {
+    padding: 25px; border-radius: 20px; text-align: center; color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.info-card:first-child { background: linear-gradient(135deg, #8B5CF6, #6366F1); }
+.info-card:last-child { background: linear-gradient(135deg, #EC4899, #F472B6); }
+.info-card h3 { font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; }
+.info-card span { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; opacity: 0.8; }
+
+/* --- JAUNUMI (Twitter stils) --- */
+.section-header { margin-bottom: 10px; font-size: 1.5rem; font-weight: 800; }
+.tweet-card {
+    background: white; border-bottom: 1px solid #F1F5F9; padding: 20px 0;
+    display: flex; gap: 15px; cursor: pointer; transition: 0.2s;
+}
+.tweet-card:hover { background: rgba(255,255,255,0.5); }
+@media (min-width: 1024px) { 
+    .tweet-card { padding: 25px; border: 1px solid #F1F5F9; margin-bottom: -1px; }
+    .tweet-card:first-child { border-radius: 20px 20px 0 0; }
+    .tweet-card:last-child { border-radius: 0 0 20px 20px; }
+}
+
+.tweet-avatar {
+    width: 48px; height: 48px; background: #F1F5F9; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent-highlight); font-size: 1.2rem; flex-shrink: 0;
+}
+.tweet-header { display: flex; gap: 6px; align-items: baseline; margin-bottom: 6px; }
+.tweet-name { font-weight: 700; color: var(--text-main); }
+.tweet-handle { color: var(--text-sec); font-size: 0.9rem; }
+.tweet-text { color: var(--text-main); line-height: 1.5; font-size: 1rem; }
+
+/* --- KONTAKTI (Saziņa un Komanda) --- */
+.contact-header h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; letter-spacing: -0.02em; }
+.contact-header p { color: var(--text-sec); margin-bottom: 20px; }
+
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 40px; }
+
+.action-btn {
+    background: white; padding: 24px 20px; border-radius: 24px; text-align: left;
+    text-decoration: none; color: var(--text-main); position: relative; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.5);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex; flex-direction: column; align-items: flex-start;
+}
+.action-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-color: var(--accent-highlight); }
+.action-btn:active { transform: scale(0.98); }
+
+.action-btn i { font-size: 2rem; color: var(--accent-highlight); margin-bottom: 15px; }
+.action-btn span { font-size: 0.85rem; font-weight: 600; color: var(--text-sec); margin-bottom: 5px; }
+.action-btn strong { display: block; font-size: 1.1rem; font-weight: 800; }
+
+/* State: Success */
+.action-btn.success-state { background: var(--accent-success); color: white; }
+.action-btn.success-state i, .action-btn.success-state span, .action-btn.success-state strong { color: white; }
+
+/* Moderns Saraksta Skats komandai */
+.team-section h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 15px; color: var(--text-main); }
+.team-grid {
+    /* SMART GRID: Aizpilda visu ekrānu, bet uz maziem ekrāniem ir saraksts */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px; margin-top: 10px;
+}
+
+/* --- KOMANDAS KOPBILDE --- */
+.team-visual {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -10px rgba(0,0,0,0.3);
+    margin-bottom: 25px;
+    border: none; /* Noņemam balto malu modernākam skatam */
+    
+    /* Ierobežojam augstumu uz PC, lai nav milzīga */
+    max-height: 400px; 
+}
+
+.team-visual img {
+    width: 100%; height: 100%; object-fit: cover; /* Aizpilda konteineri, neizkropļojot */
+    display: block; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.team-visual:hover img { transform: scale(1.05); }
+.visual-badge {
+    position: absolute; bottom: 15px; left: 15px;
+    background: rgba(255,255,255,0.9); backdrop-filter: blur(10px);
+    padding: 8px 16px; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 700; color: var(--accent-primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.member-card {
+    background: white; border: 1px solid rgba(0,0,0,0.02); padding: 12px 16px;
+    border-radius: 16px; display: flex; align-items: center; gap: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02); transition: all 0.2s ease;
+    cursor: pointer;
+}
+.member-card:hover { transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.member-card.highlight { background: linear-gradient(to right, #ffffff, #f0f9ff); border-left: 4px solid var(--accent-highlight); }
+
+.avatar {
+    width: 42px; height: 42px; background: #F1F5F9; color: var(--accent-primary);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem;
+}
+.highlight .avatar { background: var(--accent-highlight); color: white; }
+
+.details h4 { font-size: 0.95rem; font-weight: 700; line-height: 1.2; color: var(--text-main); }
+.details span { font-size: 0.8rem; color: var(--text-sec); font-weight: 500; }
+
+.form-container {
+    background: white; padding: 30px; border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    width: 100%; /* Aizņem visu pieejamo vietu */
+    margin-top: 20px;
+}
+
+/* --- DOCS --- */
+.doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.doc-item {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: var(--text-main);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.doc-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.doc-icon {
+    font-size: 1.8rem;
+    color: var(--accent-highlight);
+    flex-shrink: 0;
+}
+
+.doc-info h4 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.doc-info span {
+    font-size: 0.8rem;
+    color: var(--text-sec);
+}
+
+/* --- MODAL --- */
+.modal-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
+    z-index: 1000; display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: 0.3s ease; padding: 20px;
+}
+.modal-backdrop.active { opacity: 1; pointer-events: all; }
+
+.modal-card {
+    background: white; width: 100%; max-width: 400px;
+    border-radius: 24px; padding: 30px; position: relative;
+    transform: scale(0.9); transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+.modal-backdrop.active .modal-card { transform: scale(1); }
+
+.modal-close {
+    position: absolute; top: 15px; right: 15px; background: #F3F4F6;
+    border: none; width: 36px; height: 36px; border-radius: 50%;
+    cursor: pointer; color: var(--text-sec); font-size: 1.2rem;
+    transition: 0.2s;
+}
+.modal-close:hover { background: #E5E7EB; color: var(--text-main); }
+
+.modal-img-placeholder {
+    width: 100px; height: 100px; background: #F3F4F6; border-radius: 50%;
+    margin: 0 auto 20px auto; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; color: #9CA3AF;
+}
+.modal-img-placeholder i { font-size: 2rem; margin-bottom: 5px; }
+.modal-img-placeholder span { font-size: 0.6rem; text-transform: uppercase; font-weight: 700; }
+
+.modal-role { color: var(--accent-highlight); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 20px; }
+.modal-info { background: #F9FAFB; border-radius: 16px; padding: 15px; margin-bottom: 20px; text-align: left; }
+.modal-info p { display: flex; align-items: center; gap: 10px; color: var(--text-main); margin-bottom: 8px; }
+.modal-info p:last-child { margin-bottom: 0; }
+.modal-info i { color: var(--text-sec); width: 20px; text-align: center; }
